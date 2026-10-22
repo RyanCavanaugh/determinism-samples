@@ -1,0 +1,1 @@
+{"compilerOptions":{"strict":true,"noEmit":false,"target":"es2022","types":[],"skipLibCheck":true,"declaration":true,"emitDeclarationOnly":true,"outDir":"out"},"files":["lib.ts","f0.ts","f1.ts","f2.ts","f3.ts","f4.ts"]}

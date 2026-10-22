@@ -1,0 +1,4 @@
+decl.ts(8,11): error TS2589: Type instantiation is excessively deep and possibly infinite.
+use1.ts(2,15): error TS2589: Type instantiation is excessively deep and possibly infinite.
+
+#exit 2

@@ -1,0 +1,16 @@
+{
+ "compilerOptions": {
+  "strict": true,
+  "noEmit": true,
+  "target": "es2022",
+  "types": [],
+  "skipLibCheck": true
+ },
+ "files": [
+  "lib.ts",
+  "pad0.ts",
+  "f0.ts",
+  "f1.ts",
+  "f2.ts"
+ ]
+}

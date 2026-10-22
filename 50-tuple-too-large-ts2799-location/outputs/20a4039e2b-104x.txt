@@ -1,0 +1,4 @@
+g1/decl.ts(15,19): error TS2799: Type produces a tuple type that is too large to represent.
+g1/use1.ts(2,15): error TS2799: Type produces a tuple type that is too large to represent.
+
+#exit 2

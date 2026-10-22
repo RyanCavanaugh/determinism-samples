@@ -1,0 +1,20 @@
+{
+ "compilerOptions": {
+  "target": "es2022",
+  "strict": true,
+  "declaration": true,
+  "outDir": "out",
+  "rootDir": ".",
+  "types": [],
+  "skipLibCheck": true,
+  "noImplicitAny": false
+ },
+ "files": [
+  "g1/decl.ts",
+  "g1/use3.ts",
+  "g1/pad0.ts",
+  "g1/pad1.ts",
+  "g1/pad2.ts",
+  "g1/pad3.ts"
+ ]
+}

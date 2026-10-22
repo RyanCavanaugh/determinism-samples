@@ -1,0 +1,27 @@
+declare let e1: Box2<string>; declare let e2: Box2<number>; e1 = e2; const u = new Box2<number>().n();
+export {};
+
+type Bu8ts_0<T> = { [K in keyof T as `p0_${K & string}`]: T[K] extends object ? Bu8ts_0<T[K]> : T[K] };
+declare const wu8ts_0: Bu8ts_0<{ a: { b: { c: number, d: string }, e: boolean }, f: 0 }>;
+export const qu8ts_0: number = wu8ts_0.p0_a.p0_b.p0_c + 0;
+type Bu8ts_1<T> = { [K in keyof T as `p1_${K & string}`]: T[K] extends object ? Bu8ts_1<T[K]> : T[K] };
+declare const wu8ts_1: Bu8ts_1<{ a: { b: { c: number, d: string }, e: boolean }, f: 1 }>;
+export const qu8ts_1: number = wu8ts_1.p1_a.p1_b.p1_c + 1;
+type Bu8ts_2<T> = { [K in keyof T as `p2_${K & string}`]: T[K] extends object ? Bu8ts_2<T[K]> : T[K] };
+declare const wu8ts_2: Bu8ts_2<{ a: { b: { c: number, d: string }, e: boolean }, f: 2 }>;
+export const qu8ts_2: number = wu8ts_2.p2_a.p2_b.p2_c + 2;
+type Bu8ts_3<T> = { [K in keyof T as `p3_${K & string}`]: T[K] extends object ? Bu8ts_3<T[K]> : T[K] };
+declare const wu8ts_3: Bu8ts_3<{ a: { b: { c: number, d: string }, e: boolean }, f: 3 }>;
+export const qu8ts_3: number = wu8ts_3.p3_a.p3_b.p3_c + 3;
+type Bu8ts_4<T> = { [K in keyof T as `p4_${K & string}`]: T[K] extends object ? Bu8ts_4<T[K]> : T[K] };
+declare const wu8ts_4: Bu8ts_4<{ a: { b: { c: number, d: string }, e: boolean }, f: 4 }>;
+export const qu8ts_4: number = wu8ts_4.p4_a.p4_b.p4_c + 4;
+type Bu8ts_5<T> = { [K in keyof T as `p5_${K & string}`]: T[K] extends object ? Bu8ts_5<T[K]> : T[K] };
+declare const wu8ts_5: Bu8ts_5<{ a: { b: { c: number, d: string }, e: boolean }, f: 5 }>;
+export const qu8ts_5: number = wu8ts_5.p5_a.p5_b.p5_c + 5;
+type Bu8ts_6<T> = { [K in keyof T as `p6_${K & string}`]: T[K] extends object ? Bu8ts_6<T[K]> : T[K] };
+declare const wu8ts_6: Bu8ts_6<{ a: { b: { c: number, d: string }, e: boolean }, f: 6 }>;
+export const qu8ts_6: number = wu8ts_6.p6_a.p6_b.p6_c + 6;
+type Bu8ts_7<T> = { [K in keyof T as `p7_${K & string}`]: T[K] extends object ? Bu8ts_7<T[K]> : T[K] };
+declare const wu8ts_7: Bu8ts_7<{ a: { b: { c: number, d: string }, e: boolean }, f: 7 }>;
+export const qu8ts_7: number = wu8ts_7.p7_a.p7_b.p7_c + 7;

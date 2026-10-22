@@ -1,0 +1,27 @@
+{
+ "compilerOptions": {
+  "types": [],
+  "strict": true,
+  "module": "commonjs",
+  "target": "es2020",
+  "declaration": true,
+  "outDir": "out",
+  "rootDir": ".",
+  "skipLibCheck": true
+ },
+ "files": [
+  "g1/decl.ts",
+  "g1/u1.ts",
+  "g1/u2.ts",
+  "g1/u3.ts",
+  "g1/u4.ts",
+  "g1/u5.ts",
+  "g1/u6.ts",
+  "g1/u7.ts",
+  "g1/u8.ts",
+  "g1/pad0.ts",
+  "g1/pad1.ts",
+  "g1/pad2.ts",
+  "g1/pad3.ts"
+ ]
+}

@@ -1,0 +1,41 @@
+f0.ts(6,28): error TS2322: Type '[unknown, (x: any) => [unknown, [unknown, number]]]' is not assignable to type 'number'.
+f0.ts(7,25): error TS7006: Parameter 'x' implicitly has an 'any' type.
+
+#exit 2
+#file f0.d.ts
+export declare const v0 = 1;
+export declare const v1: (x: any) => [unknown, [unknown, number]];
+
+#file f1.d.ts
+export declare const v0: [unknown, number];
+export declare const v1 = 1;
+
+#file f2.d.ts
+export declare const v0: [unknown, (x: any) => [number, [number, number]]];
+export declare const v1 = 1;
+
+#file f3.d.ts
+export declare const v0: {
+    p: number;
+};
+export declare const v1: [number, [number, number]];
+
+#file f4.d.ts
+export declare const v0: [unknown, (x: any) => [unknown, [unknown, number]]];
+export declare const v1 = 1;
+
+#file lib.d.ts
+export declare function fun<T>(g: (x: T) => T, h: (y: T) => T, x: T): T;
+export declare function pipe<A, B>(a: A, f: (a: A) => B): B;
+export declare function id<T>(x: T): T;
+export declare function call<T>(f: () => T): T;
+export declare function wrap<T>(x: T): {
+    v: T;
+};
+export declare function both<T, U>(f: (t: T) => U, g: (u: U) => T): [T, U];
+export declare function mk<T extends {
+    a: unknown;
+}>(f: (x: T) => T): T;
+export declare const arr: {
+    map<U>(f: (x: number) => U): U[];
+};

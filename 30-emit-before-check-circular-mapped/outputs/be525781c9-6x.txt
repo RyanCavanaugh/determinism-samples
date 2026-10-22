@@ -1,0 +1,84 @@
+g1/types.ts(3,5): error TS2502: 'each' is referenced directly or indirectly in its own type annotation.
+g1/types.ts(3,11): error TS2615: Type of property 'each' circularly references itself in mapped type '{ [P in keyof Widget]: undefined extends Widget[P] ? never : P; }'.
+g1/u1.ts(2,16): error TS2615: Type of property 'each' circularly references itself in mapped type '{ [P in keyof Widget]: undefined extends Widget[P] ? never : P; }'.
+
+#exit 2
+#file g1\pad0.d.ts
+export declare const r0_0: number;
+export declare const r0_1: number;
+export declare const r0_2: number;
+export declare const r0_3: number;
+export declare const r0_4: number;
+
+#file g1\pad0.js
+export const r0_0 = v0_0.p0_a.p0_b.p0_c + 0;
+export const r0_1 = v0_1.p1_a.p1_b.p1_c + 1;
+export const r0_2 = v0_2.p2_a.p2_b.p2_c + 2;
+export const r0_3 = v0_3.p3_a.p3_b.p3_c + 3;
+export const r0_4 = v0_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\pad1.d.ts
+export declare const r1_0: number;
+export declare const r1_1: number;
+export declare const r1_2: number;
+export declare const r1_3: number;
+export declare const r1_4: number;
+
+#file g1\pad1.js
+export const r1_0 = v1_0.p0_a.p0_b.p0_c + 0;
+export const r1_1 = v1_1.p1_a.p1_b.p1_c + 1;
+export const r1_2 = v1_2.p2_a.p2_b.p2_c + 2;
+export const r1_3 = v1_3.p3_a.p3_b.p3_c + 3;
+export const r1_4 = v1_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\pad2.d.ts
+export declare const r2_0: number;
+export declare const r2_1: number;
+export declare const r2_2: number;
+export declare const r2_3: number;
+export declare const r2_4: number;
+
+#file g1\pad2.js
+export const r2_0 = v2_0.p0_a.p0_b.p0_c + 0;
+export const r2_1 = v2_1.p1_a.p1_b.p1_c + 1;
+export const r2_2 = v2_2.p2_a.p2_b.p2_c + 2;
+export const r2_3 = v2_3.p3_a.p3_b.p3_c + 3;
+export const r2_4 = v2_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\pad3.d.ts
+export declare const r3_0: number;
+export declare const r3_1: number;
+export declare const r3_2: number;
+export declare const r3_3: number;
+export declare const r3_4: number;
+
+#file g1\pad3.js
+export const r3_0 = v3_0.p0_a.p0_b.p0_c + 0;
+export const r3_1 = v3_1.p1_a.p1_b.p1_c + 1;
+export const r3_2 = v3_2.p2_a.p2_b.p2_c + 2;
+export const r3_3 = v3_3.p3_a.p3_b.p3_c + 3;
+export const r3_4 = v3_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\types.d.ts
+export interface Widget {
+    type: "list";
+    each: Child<Widget>;
+}
+export type NonOptionalKeys<T> = {
+    [P in keyof T]: undefined extends T[P] ? never : P;
+}[keyof T];
+export type Child<T> = {
+    [P in NonOptionalKeys<T>]: T[P];
+};
+export type ListChild = Child<Widget>;
+
+#file g1\types.js
+export {};
+
+#file g1\u1.d.ts
+import { ListChild } from "./types";
+export declare const a: ListChild;
+
+#file g1\u1.js
+x.type;
+export const a = x;

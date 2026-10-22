@@ -1,0 +1,52 @@
+
+#exit 0
+#file a.d.ts
+export declare const a: import("./decl").Effect<100, never, never>;
+
+#file a.js
+import { inner } from './decl';
+export const a = inner.log(100);
+
+#file b.d.ts
+export declare const b: import("./decl").Effect<100, never, never>;
+
+#file b.js
+import { outer } from './decl';
+export const b = outer.log(100);
+
+#file decl.d.ts
+export declare const EffectTypeId: unique symbol;
+export interface Variance<out A, out E, out R> {
+    readonly [EffectTypeId]: VarianceStruct<A, E, R>;
+}
+export type Covariant<A> = (_: never) => A;
+export interface VarianceStruct<out A, out E, out R> {
+    readonly _V: string;
+    readonly _A: Covariant<A>;
+    readonly _E: Covariant<E>;
+    readonly _R: Covariant<R>;
+}
+export interface Effect<out A, out E = never, out R = never> extends Variance<A, E, R> {
+}
+export declare const succeed: <A>(value: A) => Effect<A>;
+export type F<X, Y> = Y extends {
+    _type: infer Z;
+} ? X extends Effect<infer A, infer E, infer R> ? Effect<A, E, R | Z> : X : X;
+export type ProxyMap<Service> = {
+    [K in keyof Service]: (Service & {
+        _type: Service;
+    })[K];
+};
+export declare const implement: <T>() => <I extends ReadonlyArray<any>, X>(x: (...i: I) => X) => (...i: I) => F<X, T>;
+export declare class XXX {
+    log: <N extends number>(n: N) => F<Effect<N, never, never>, this>;
+}
+export declare const inner: XXX;
+export declare const outer: ProxyMap<XXX>;
+
+#file decl.js
+export class XXX {
+    constructor() {
+        this.log = implement()((n) => succeed(n));
+    }
+}

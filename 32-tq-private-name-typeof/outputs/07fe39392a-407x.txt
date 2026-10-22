@@ -1,0 +1,83 @@
+
+#exit 0
+#file g1\c2.d.ts
+export declare class C2 {
+    #private;
+    p: number;
+    test1(): {
+        test1(a: C2): typeof a.#a;
+        test2(a: C2): typeof a.p;
+    };
+}
+
+#file g1\c2.js
+export class C2 {
+    #a = 1;
+    p = 1;
+    test1() {
+        class C {
+            test1(a) {
+                return 1;
+            }
+            test2(a) {
+                return 1;
+            }
+        }
+        return new C();
+    }
+}
+
+#file g1\pad0.d.ts
+export declare const r0_0: number;
+export declare const r0_1: number;
+export declare const r0_2: number;
+
+#file g1\pad0.js
+export const r0_0 = v0_0.p0_a.p0_b.p0_c + 0;
+export const r0_1 = v0_1.p1_a.p1_b.p1_c + 1;
+export const r0_2 = v0_2.p2_a.p2_b.p2_c + 2;
+
+#file g1\pad1.d.ts
+export declare const r1_0: number;
+export declare const r1_1: number;
+export declare const r1_2: number;
+
+#file g1\pad1.js
+export const r1_0 = v1_0.p0_a.p0_b.p0_c + 0;
+export const r1_1 = v1_1.p1_a.p1_b.p1_c + 1;
+export const r1_2 = v1_2.p2_a.p2_b.p2_c + 2;
+
+#file g1\pad2.d.ts
+export declare const r2_0: number;
+export declare const r2_1: number;
+export declare const r2_2: number;
+
+#file g1\pad2.js
+export const r2_0 = v2_0.p0_a.p0_b.p0_c + 0;
+export const r2_1 = v2_1.p1_a.p1_b.p1_c + 1;
+export const r2_2 = v2_2.p2_a.p2_b.p2_c + 2;
+
+#file g1\pad3.d.ts
+export declare const r3_0: number;
+export declare const r3_1: number;
+export declare const r3_2: number;
+
+#file g1\pad3.js
+export const r3_0 = v3_0.p0_a.p0_b.p0_c + 0;
+export const r3_1 = v3_1.p1_a.p1_b.p1_c + 1;
+export const r3_2 = v3_2.p2_a.p2_b.p2_c + 2;
+
+#file g1\u1.d.ts
+import { C2 } from "./c2";
+export declare const r: {
+    test1(a: C2): number;
+    test2(a: C2): number;
+};
+export declare const f1: (a: C2) => number;
+export declare const f2: (a: C2) => number;
+
+#file g1\u1.js
+import { C2 } from "./c2";
+export const r = new C2().test1();
+export const f1 = r.test1;
+export const f2 = r.test2;

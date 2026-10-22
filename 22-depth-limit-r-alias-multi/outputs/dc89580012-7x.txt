@@ -1,0 +1,5 @@
+a.ts(2,14): error TS5114: Instantiations of type 'R' appear infinitely circular.
+c.ts(2,14): error TS5114: Instantiations of type 'R' appear infinitely circular.
+decl.ts(1,85): error TS5114: Instantiations of type 'ReturnType' appear infinitely circular.
+
+#exit 2

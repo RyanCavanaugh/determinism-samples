@@ -1,0 +1,8 @@
+f1.ts(5,14): error TS7022: 'v0' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+f1.ts(5,24): error TS7024: Function implicitly has return type 'any' because it does not have a return type annotation and is referenced directly or indirectly in one of its return expressions.
+f2.ts(5,23): error TS2345: Argument of type '(x: number) => (x: number) => any' is not assignable to parameter of type '(x: number) => number'.
+  Type '(x: number) => any' is not assignable to type 'number'.
+f3.ts(5,14): error TS7022: 'v0' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+f3.ts(5,42): error TS7024: Function implicitly has return type 'any' because it does not have a return type annotation and is referenced directly or indirectly in one of its return expressions.
+
+#exit 2

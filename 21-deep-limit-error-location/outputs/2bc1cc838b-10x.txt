@@ -1,0 +1,5 @@
+decl.ts(2,17): error TS5114: Instantiations of type 'Deep' appear infinitely circular.
+use1.ts(2,18): error TS5114: Instantiations of type 'Deep' appear infinitely circular.
+use2.ts(2,22): error TS5114: Instantiations of type 'Deep' appear infinitely circular.
+
+#exit 2

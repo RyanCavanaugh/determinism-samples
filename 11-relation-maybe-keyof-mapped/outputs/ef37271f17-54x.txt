@@ -1,0 +1,120 @@
+g1/decl.ts(3,32): error TS2322: Type 'B' is not assignable to type 'string | number | symbol'.
+
+#exit 2
+#file g1\decl.d.ts
+interface A {
+    next: A;
+    v: "a";
+}
+interface B {
+    next: B;
+    v: string;
+}
+type M<T> = {
+    [K in keyof T as B]: 1;
+};
+declare const a: A;
+declare function h(x: B): 1;
+declare function h(x: unknown): 2;
+declare function f<T>(): void;
+
+#file g1\decl.js
+"use strict";
+function f() {
+    function g(x) { return 1; }
+    const r = g(a);
+}
+
+#file g1\pad0.d.ts
+export declare const r0_0: number;
+export declare const r0_1: number;
+export declare const r0_2: number;
+export declare const r0_3: number;
+export declare const r0_4: number;
+
+#file g1\pad0.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r0_4 = exports.r0_3 = exports.r0_2 = exports.r0_1 = exports.r0_0 = void 0;
+exports.r0_0 = v0_0.p0_a.p0_b.p0_c + 0;
+exports.r0_1 = v0_1.p1_a.p1_b.p1_c + 1;
+exports.r0_2 = v0_2.p2_a.p2_b.p2_c + 2;
+exports.r0_3 = v0_3.p3_a.p3_b.p3_c + 3;
+exports.r0_4 = v0_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\pad1.d.ts
+export declare const r1_0: number;
+export declare const r1_1: number;
+export declare const r1_2: number;
+export declare const r1_3: number;
+export declare const r1_4: number;
+
+#file g1\pad1.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r1_4 = exports.r1_3 = exports.r1_2 = exports.r1_1 = exports.r1_0 = void 0;
+exports.r1_0 = v1_0.p0_a.p0_b.p0_c + 0;
+exports.r1_1 = v1_1.p1_a.p1_b.p1_c + 1;
+exports.r1_2 = v1_2.p2_a.p2_b.p2_c + 2;
+exports.r1_3 = v1_3.p3_a.p3_b.p3_c + 3;
+exports.r1_4 = v1_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\pad2.d.ts
+export declare const r2_0: number;
+export declare const r2_1: number;
+export declare const r2_2: number;
+export declare const r2_3: number;
+export declare const r2_4: number;
+
+#file g1\pad2.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r2_4 = exports.r2_3 = exports.r2_2 = exports.r2_1 = exports.r2_0 = void 0;
+exports.r2_0 = v2_0.p0_a.p0_b.p0_c + 0;
+exports.r2_1 = v2_1.p1_a.p1_b.p1_c + 1;
+exports.r2_2 = v2_2.p2_a.p2_b.p2_c + 2;
+exports.r2_3 = v2_3.p3_a.p3_b.p3_c + 3;
+exports.r2_4 = v2_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\pad3.d.ts
+export declare const r3_0: number;
+export declare const r3_1: number;
+export declare const r3_2: number;
+export declare const r3_3: number;
+export declare const r3_4: number;
+
+#file g1\pad3.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r3_4 = exports.r3_3 = exports.r3_2 = exports.r3_1 = exports.r3_0 = void 0;
+exports.r3_0 = v3_0.p0_a.p0_b.p0_c + 0;
+exports.r3_1 = v3_1.p1_a.p1_b.p1_c + 1;
+exports.r3_2 = v3_2.p2_a.p2_b.p2_c + 2;
+exports.r3_3 = v3_3.p3_a.p3_b.p3_c + 3;
+exports.r3_4 = v3_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\u1.d.ts
+export {};
+export declare const qu1ts_0: number;
+export declare const qu1ts_1: number;
+
+#file g1\u1.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu1ts_1 = exports.qu1ts_0 = void 0;
+const w = h(a);
+exports.qu1ts_0 = wu1ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu1ts_1 = wu1ts_1.p1_a.p1_b.p1_c + 1;
+
+#file g1\u2.d.ts
+export {};
+export declare const qu2ts_0: number;
+export declare const qu2ts_1: number;
+
+#file g1\u2.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu2ts_1 = exports.qu2ts_0 = void 0;
+const w2 = h(a);
+exports.qu2ts_0 = wu2ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu2ts_1 = wu2ts_1.p1_a.p1_b.p1_c + 1;

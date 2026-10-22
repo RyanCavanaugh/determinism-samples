@@ -1,0 +1,15 @@
+{
+ "compilerOptions": {
+  "types": [],
+  "noEmit": true,
+  "target": "es2015",
+  "skipLibCheck": true,
+  "strict": true
+ },
+ "files": [
+  "g1/a.ts",
+  "g1/u.ts",
+  "g1/pad0.ts",
+  "g1/pad1.ts"
+ ]
+}

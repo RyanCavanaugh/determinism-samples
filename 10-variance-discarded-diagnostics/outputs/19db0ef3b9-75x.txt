@@ -1,0 +1,341 @@
+g1/decl.ts(7,33): error TS2339: Property 'foo' does not exist on type 'A'.
+g1/u3.ts(2,1): error TS2322: Type 'Foo<number>' is not assignable to type 'Foo<string>'.
+  Type 'number' is not assignable to type 'string'.
+g1/u4.ts(2,1): error TS2322: Type 'Bar<number>' is not assignable to type 'Bar<string>'.
+  Type 'number' is not assignable to type 'string'.
+
+#exit 2
+#file g1\decl.d.ts
+interface A {
+    a: string;
+}
+interface B {
+    foo: string;
+}
+declare function pick(x: Foo<number>): A;
+declare function pick(x: object): B;
+declare class Bar<T> {
+    x: T;
+    Value: any;
+}
+declare class Foo<T> {
+    bar: Bar<T>;
+    constructor(bar: Bar<T>);
+}
+
+#file g1\decl.js
+"use strict";
+class Bar {
+    x;
+    Value = pick(new Foo(this)).foo;
+}
+class Foo {
+    bar;
+    constructor(bar) { this.bar = bar; }
+}
+
+#file g1\pad0.d.ts
+export declare const r0_0: number;
+export declare const r0_1: number;
+export declare const r0_2: number;
+export declare const r0_3: number;
+export declare const r0_4: number;
+export declare const r0_5: number;
+export declare const r0_6: number;
+export declare const r0_7: number;
+export declare const r0_8: number;
+export declare const r0_9: number;
+export declare const r0_10: number;
+export declare const r0_11: number;
+export declare const r0_12: number;
+export declare const r0_13: number;
+export declare const r0_14: number;
+
+#file g1\pad0.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r0_14 = exports.r0_13 = exports.r0_12 = exports.r0_11 = exports.r0_10 = exports.r0_9 = exports.r0_8 = exports.r0_7 = exports.r0_6 = exports.r0_5 = exports.r0_4 = exports.r0_3 = exports.r0_2 = exports.r0_1 = exports.r0_0 = void 0;
+exports.r0_0 = v0_0.p0_a.p0_b.p0_c + 0;
+exports.r0_1 = v0_1.p1_a.p1_b.p1_c + 1;
+exports.r0_2 = v0_2.p2_a.p2_b.p2_c + 2;
+exports.r0_3 = v0_3.p3_a.p3_b.p3_c + 3;
+exports.r0_4 = v0_4.p4_a.p4_b.p4_c + 4;
+exports.r0_5 = v0_5.p5_a.p5_b.p5_c + 5;
+exports.r0_6 = v0_6.p6_a.p6_b.p6_c + 6;
+exports.r0_7 = v0_7.p7_a.p7_b.p7_c + 7;
+exports.r0_8 = v0_8.p8_a.p8_b.p8_c + 8;
+exports.r0_9 = v0_9.p9_a.p9_b.p9_c + 9;
+exports.r0_10 = v0_10.p10_a.p10_b.p10_c + 10;
+exports.r0_11 = v0_11.p11_a.p11_b.p11_c + 11;
+exports.r0_12 = v0_12.p12_a.p12_b.p12_c + 12;
+exports.r0_13 = v0_13.p13_a.p13_b.p13_c + 13;
+exports.r0_14 = v0_14.p14_a.p14_b.p14_c + 14;
+
+#file g1\pad1.d.ts
+export declare const r1_0: number;
+export declare const r1_1: number;
+export declare const r1_2: number;
+export declare const r1_3: number;
+export declare const r1_4: number;
+export declare const r1_5: number;
+export declare const r1_6: number;
+export declare const r1_7: number;
+export declare const r1_8: number;
+export declare const r1_9: number;
+export declare const r1_10: number;
+export declare const r1_11: number;
+export declare const r1_12: number;
+export declare const r1_13: number;
+export declare const r1_14: number;
+
+#file g1\pad1.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r1_14 = exports.r1_13 = exports.r1_12 = exports.r1_11 = exports.r1_10 = exports.r1_9 = exports.r1_8 = exports.r1_7 = exports.r1_6 = exports.r1_5 = exports.r1_4 = exports.r1_3 = exports.r1_2 = exports.r1_1 = exports.r1_0 = void 0;
+exports.r1_0 = v1_0.p0_a.p0_b.p0_c + 0;
+exports.r1_1 = v1_1.p1_a.p1_b.p1_c + 1;
+exports.r1_2 = v1_2.p2_a.p2_b.p2_c + 2;
+exports.r1_3 = v1_3.p3_a.p3_b.p3_c + 3;
+exports.r1_4 = v1_4.p4_a.p4_b.p4_c + 4;
+exports.r1_5 = v1_5.p5_a.p5_b.p5_c + 5;
+exports.r1_6 = v1_6.p6_a.p6_b.p6_c + 6;
+exports.r1_7 = v1_7.p7_a.p7_b.p7_c + 7;
+exports.r1_8 = v1_8.p8_a.p8_b.p8_c + 8;
+exports.r1_9 = v1_9.p9_a.p9_b.p9_c + 9;
+exports.r1_10 = v1_10.p10_a.p10_b.p10_c + 10;
+exports.r1_11 = v1_11.p11_a.p11_b.p11_c + 11;
+exports.r1_12 = v1_12.p12_a.p12_b.p12_c + 12;
+exports.r1_13 = v1_13.p13_a.p13_b.p13_c + 13;
+exports.r1_14 = v1_14.p14_a.p14_b.p14_c + 14;
+
+#file g1\pad2.d.ts
+export declare const r2_0: number;
+export declare const r2_1: number;
+export declare const r2_2: number;
+export declare const r2_3: number;
+export declare const r2_4: number;
+export declare const r2_5: number;
+export declare const r2_6: number;
+export declare const r2_7: number;
+export declare const r2_8: number;
+export declare const r2_9: number;
+export declare const r2_10: number;
+export declare const r2_11: number;
+export declare const r2_12: number;
+export declare const r2_13: number;
+export declare const r2_14: number;
+
+#file g1\pad2.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r2_14 = exports.r2_13 = exports.r2_12 = exports.r2_11 = exports.r2_10 = exports.r2_9 = exports.r2_8 = exports.r2_7 = exports.r2_6 = exports.r2_5 = exports.r2_4 = exports.r2_3 = exports.r2_2 = exports.r2_1 = exports.r2_0 = void 0;
+exports.r2_0 = v2_0.p0_a.p0_b.p0_c + 0;
+exports.r2_1 = v2_1.p1_a.p1_b.p1_c + 1;
+exports.r2_2 = v2_2.p2_a.p2_b.p2_c + 2;
+exports.r2_3 = v2_3.p3_a.p3_b.p3_c + 3;
+exports.r2_4 = v2_4.p4_a.p4_b.p4_c + 4;
+exports.r2_5 = v2_5.p5_a.p5_b.p5_c + 5;
+exports.r2_6 = v2_6.p6_a.p6_b.p6_c + 6;
+exports.r2_7 = v2_7.p7_a.p7_b.p7_c + 7;
+exports.r2_8 = v2_8.p8_a.p8_b.p8_c + 8;
+exports.r2_9 = v2_9.p9_a.p9_b.p9_c + 9;
+exports.r2_10 = v2_10.p10_a.p10_b.p10_c + 10;
+exports.r2_11 = v2_11.p11_a.p11_b.p11_c + 11;
+exports.r2_12 = v2_12.p12_a.p12_b.p12_c + 12;
+exports.r2_13 = v2_13.p13_a.p13_b.p13_c + 13;
+exports.r2_14 = v2_14.p14_a.p14_b.p14_c + 14;
+
+#file g1\pad3.d.ts
+export declare const r3_0: number;
+export declare const r3_1: number;
+export declare const r3_2: number;
+export declare const r3_3: number;
+export declare const r3_4: number;
+export declare const r3_5: number;
+export declare const r3_6: number;
+export declare const r3_7: number;
+export declare const r3_8: number;
+export declare const r3_9: number;
+export declare const r3_10: number;
+export declare const r3_11: number;
+export declare const r3_12: number;
+export declare const r3_13: number;
+export declare const r3_14: number;
+
+#file g1\pad3.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r3_14 = exports.r3_13 = exports.r3_12 = exports.r3_11 = exports.r3_10 = exports.r3_9 = exports.r3_8 = exports.r3_7 = exports.r3_6 = exports.r3_5 = exports.r3_4 = exports.r3_3 = exports.r3_2 = exports.r3_1 = exports.r3_0 = void 0;
+exports.r3_0 = v3_0.p0_a.p0_b.p0_c + 0;
+exports.r3_1 = v3_1.p1_a.p1_b.p1_c + 1;
+exports.r3_2 = v3_2.p2_a.p2_b.p2_c + 2;
+exports.r3_3 = v3_3.p3_a.p3_b.p3_c + 3;
+exports.r3_4 = v3_4.p4_a.p4_b.p4_c + 4;
+exports.r3_5 = v3_5.p5_a.p5_b.p5_c + 5;
+exports.r3_6 = v3_6.p6_a.p6_b.p6_c + 6;
+exports.r3_7 = v3_7.p7_a.p7_b.p7_c + 7;
+exports.r3_8 = v3_8.p8_a.p8_b.p8_c + 8;
+exports.r3_9 = v3_9.p9_a.p9_b.p9_c + 9;
+exports.r3_10 = v3_10.p10_a.p10_b.p10_c + 10;
+exports.r3_11 = v3_11.p11_a.p11_b.p11_c + 11;
+exports.r3_12 = v3_12.p12_a.p12_b.p12_c + 12;
+exports.r3_13 = v3_13.p13_a.p13_b.p13_c + 13;
+exports.r3_14 = v3_14.p14_a.p14_b.p14_c + 14;
+
+#file g1\u1.d.ts
+export declare const v: number;
+export declare const qu1ts_0: number;
+export declare const qu1ts_1: number;
+export declare const qu1ts_2: number;
+export declare const qu1ts_3: number;
+export declare const qu1ts_4: number;
+export declare const qu1ts_5: number;
+export declare const qu1ts_6: number;
+export declare const qu1ts_7: number;
+export declare const qu1ts_8: number;
+export declare const qu1ts_9: number;
+export declare const qu1ts_10: number;
+export declare const qu1ts_11: number;
+export declare const qu1ts_12: number;
+export declare const qu1ts_13: number;
+export declare const qu1ts_14: number;
+
+#file g1\u1.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu1ts_14 = exports.qu1ts_13 = exports.qu1ts_12 = exports.qu1ts_11 = exports.qu1ts_10 = exports.qu1ts_9 = exports.qu1ts_8 = exports.qu1ts_7 = exports.qu1ts_6 = exports.qu1ts_5 = exports.qu1ts_4 = exports.qu1ts_3 = exports.qu1ts_2 = exports.qu1ts_1 = exports.qu1ts_0 = exports.v = void 0;
+exports.v = new Bar().Value;
+exports.qu1ts_0 = wu1ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu1ts_1 = wu1ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu1ts_2 = wu1ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu1ts_3 = wu1ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu1ts_4 = wu1ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu1ts_5 = wu1ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu1ts_6 = wu1ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu1ts_7 = wu1ts_7.p7_a.p7_b.p7_c + 7;
+exports.qu1ts_8 = wu1ts_8.p8_a.p8_b.p8_c + 8;
+exports.qu1ts_9 = wu1ts_9.p9_a.p9_b.p9_c + 9;
+exports.qu1ts_10 = wu1ts_10.p10_a.p10_b.p10_c + 10;
+exports.qu1ts_11 = wu1ts_11.p11_a.p11_b.p11_c + 11;
+exports.qu1ts_12 = wu1ts_12.p12_a.p12_b.p12_c + 12;
+exports.qu1ts_13 = wu1ts_13.p13_a.p13_b.p13_c + 13;
+exports.qu1ts_14 = wu1ts_14.p14_a.p14_b.p14_c + 14;
+
+#file g1\u2.d.ts
+export declare const w: any;
+export declare const qu2ts_0: number;
+export declare const qu2ts_1: number;
+export declare const qu2ts_2: number;
+export declare const qu2ts_3: number;
+export declare const qu2ts_4: number;
+export declare const qu2ts_5: number;
+export declare const qu2ts_6: number;
+export declare const qu2ts_7: number;
+export declare const qu2ts_8: number;
+export declare const qu2ts_9: number;
+export declare const qu2ts_10: number;
+export declare const qu2ts_11: number;
+export declare const qu2ts_12: number;
+export declare const qu2ts_13: number;
+export declare const qu2ts_14: number;
+
+#file g1\u2.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu2ts_14 = exports.qu2ts_13 = exports.qu2ts_12 = exports.qu2ts_11 = exports.qu2ts_10 = exports.qu2ts_9 = exports.qu2ts_8 = exports.qu2ts_7 = exports.qu2ts_6 = exports.qu2ts_5 = exports.qu2ts_4 = exports.qu2ts_3 = exports.qu2ts_2 = exports.qu2ts_1 = exports.qu2ts_0 = exports.w = void 0;
+exports.w = new Bar().Value;
+exports.qu2ts_0 = wu2ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu2ts_1 = wu2ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu2ts_2 = wu2ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu2ts_3 = wu2ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu2ts_4 = wu2ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu2ts_5 = wu2ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu2ts_6 = wu2ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu2ts_7 = wu2ts_7.p7_a.p7_b.p7_c + 7;
+exports.qu2ts_8 = wu2ts_8.p8_a.p8_b.p8_c + 8;
+exports.qu2ts_9 = wu2ts_9.p9_a.p9_b.p9_c + 9;
+exports.qu2ts_10 = wu2ts_10.p10_a.p10_b.p10_c + 10;
+exports.qu2ts_11 = wu2ts_11.p11_a.p11_b.p11_c + 11;
+exports.qu2ts_12 = wu2ts_12.p12_a.p12_b.p12_c + 12;
+exports.qu2ts_13 = wu2ts_13.p13_a.p13_b.p13_c + 13;
+exports.qu2ts_14 = wu2ts_14.p14_a.p14_b.p14_c + 14;
+
+#file g1\u3.d.ts
+export declare const y: Foo<string>;
+export declare const qu3ts_0: number;
+export declare const qu3ts_1: number;
+export declare const qu3ts_2: number;
+export declare const qu3ts_3: number;
+export declare const qu3ts_4: number;
+export declare const qu3ts_5: number;
+export declare const qu3ts_6: number;
+export declare const qu3ts_7: number;
+export declare const qu3ts_8: number;
+export declare const qu3ts_9: number;
+export declare const qu3ts_10: number;
+export declare const qu3ts_11: number;
+export declare const qu3ts_12: number;
+export declare const qu3ts_13: number;
+export declare const qu3ts_14: number;
+
+#file g1\u3.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu3ts_14 = exports.qu3ts_13 = exports.qu3ts_12 = exports.qu3ts_11 = exports.qu3ts_10 = exports.qu3ts_9 = exports.qu3ts_8 = exports.qu3ts_7 = exports.qu3ts_6 = exports.qu3ts_5 = exports.qu3ts_4 = exports.qu3ts_3 = exports.qu3ts_2 = exports.qu3ts_1 = exports.qu3ts_0 = exports.y = void 0;
+f1 = f2;
+exports.y = new Foo(new Bar());
+exports.qu3ts_0 = wu3ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu3ts_1 = wu3ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu3ts_2 = wu3ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu3ts_3 = wu3ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu3ts_4 = wu3ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu3ts_5 = wu3ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu3ts_6 = wu3ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu3ts_7 = wu3ts_7.p7_a.p7_b.p7_c + 7;
+exports.qu3ts_8 = wu3ts_8.p8_a.p8_b.p8_c + 8;
+exports.qu3ts_9 = wu3ts_9.p9_a.p9_b.p9_c + 9;
+exports.qu3ts_10 = wu3ts_10.p10_a.p10_b.p10_c + 10;
+exports.qu3ts_11 = wu3ts_11.p11_a.p11_b.p11_c + 11;
+exports.qu3ts_12 = wu3ts_12.p12_a.p12_b.p12_c + 12;
+exports.qu3ts_13 = wu3ts_13.p13_a.p13_b.p13_c + 13;
+exports.qu3ts_14 = wu3ts_14.p14_a.p14_b.p14_c + 14;
+
+#file g1\u4.d.ts
+export declare const ww: any;
+export declare const qu4ts_0: number;
+export declare const qu4ts_1: number;
+export declare const qu4ts_2: number;
+export declare const qu4ts_3: number;
+export declare const qu4ts_4: number;
+export declare const qu4ts_5: number;
+export declare const qu4ts_6: number;
+export declare const qu4ts_7: number;
+export declare const qu4ts_8: number;
+export declare const qu4ts_9: number;
+export declare const qu4ts_10: number;
+export declare const qu4ts_11: number;
+export declare const qu4ts_12: number;
+export declare const qu4ts_13: number;
+export declare const qu4ts_14: number;
+
+#file g1\u4.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu4ts_14 = exports.qu4ts_13 = exports.qu4ts_12 = exports.qu4ts_11 = exports.qu4ts_10 = exports.qu4ts_9 = exports.qu4ts_8 = exports.qu4ts_7 = exports.qu4ts_6 = exports.qu4ts_5 = exports.qu4ts_4 = exports.qu4ts_3 = exports.qu4ts_2 = exports.qu4ts_1 = exports.qu4ts_0 = exports.ww = void 0;
+b1 = b2;
+exports.ww = b1.Value;
+exports.qu4ts_0 = wu4ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu4ts_1 = wu4ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu4ts_2 = wu4ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu4ts_3 = wu4ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu4ts_4 = wu4ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu4ts_5 = wu4ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu4ts_6 = wu4ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu4ts_7 = wu4ts_7.p7_a.p7_b.p7_c + 7;
+exports.qu4ts_8 = wu4ts_8.p8_a.p8_b.p8_c + 8;
+exports.qu4ts_9 = wu4ts_9.p9_a.p9_b.p9_c + 9;
+exports.qu4ts_10 = wu4ts_10.p10_a.p10_b.p10_c + 10;
+exports.qu4ts_11 = wu4ts_11.p11_a.p11_b.p11_c + 11;
+exports.qu4ts_12 = wu4ts_12.p12_a.p12_b.p12_c + 12;
+exports.qu4ts_13 = wu4ts_13.p13_a.p13_b.p13_c + 13;
+exports.qu4ts_14 = wu4ts_14.p14_a.p14_b.p14_c + 14;

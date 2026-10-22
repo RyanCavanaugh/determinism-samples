@@ -1,0 +1,309 @@
+g1/decl.ts(11,9): error TS7023: 'g' implicitly has return type 'any' because it does not have a return type annotation and is referenced directly or indirectly in one of its return expressions.
+g1/u1.ts(1,47): error TS2322: Type 'Box<number>' is not assignable to type 'Box<string>'.
+  Type 'number' is not assignable to type 'string'.
+g1/u3.ts(1,49): error TS2322: Type 'Box2<number>' is not assignable to type 'Box2<string>'.
+  Type 'number' is not assignable to type 'string'.
+g1/u6.ts(1,63): error TS2322: Type 'Box<number>[]' is not assignable to type 'Box<string>[]'.
+  Type 'Box<number>' is not assignable to type 'Box<string>'.
+    Type 'number' is not assignable to type 'string'.
+g1/u7.ts(1,33): error TS2345: Argument of type 'Box<number>' is not assignable to parameter of type 'Box<string>'.
+  Type 'number' is not assignable to type 'string'.
+g1/u8.ts(1,61): error TS2322: Type 'Box2<number>' is not assignable to type 'Box2<string>'.
+  Type 'number' is not assignable to type 'string'.
+
+#exit 2
+#file g1\decl.d.ts
+declare let a1: Box<string>;
+declare let a2: Box<number>;
+declare const cond: boolean;
+declare class Box<T> {
+    value: T;
+    m(): Box<string>;
+}
+declare class Box2<T> {
+    value: T;
+    n(): Box2<string>;
+    get g(): Box2<number>;
+}
+
+#file g1\decl.js
+"use strict";
+class Box {
+    m() { if (cond)
+        return a1; return a2; }
+}
+class Box2 {
+    n() { if (cond)
+        return new Box2(); return new Box2(); }
+    get g() { return cond ? new Box2() : new Box2(); }
+}
+
+#file g1\pad0.d.ts
+export declare const r0_0: number;
+export declare const r0_1: number;
+export declare const r0_2: number;
+export declare const r0_3: number;
+export declare const r0_4: number;
+
+#file g1\pad0.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r0_4 = exports.r0_3 = exports.r0_2 = exports.r0_1 = exports.r0_0 = void 0;
+exports.r0_0 = v0_0.p0_a.p0_b.p0_c + 0;
+exports.r0_1 = v0_1.p1_a.p1_b.p1_c + 1;
+exports.r0_2 = v0_2.p2_a.p2_b.p2_c + 2;
+exports.r0_3 = v0_3.p3_a.p3_b.p3_c + 3;
+exports.r0_4 = v0_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\pad1.d.ts
+export declare const r1_0: number;
+export declare const r1_1: number;
+export declare const r1_2: number;
+export declare const r1_3: number;
+export declare const r1_4: number;
+
+#file g1\pad1.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r1_4 = exports.r1_3 = exports.r1_2 = exports.r1_1 = exports.r1_0 = void 0;
+exports.r1_0 = v1_0.p0_a.p0_b.p0_c + 0;
+exports.r1_1 = v1_1.p1_a.p1_b.p1_c + 1;
+exports.r1_2 = v1_2.p2_a.p2_b.p2_c + 2;
+exports.r1_3 = v1_3.p3_a.p3_b.p3_c + 3;
+exports.r1_4 = v1_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\pad2.d.ts
+export declare const r2_0: number;
+export declare const r2_1: number;
+export declare const r2_2: number;
+export declare const r2_3: number;
+export declare const r2_4: number;
+
+#file g1\pad2.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r2_4 = exports.r2_3 = exports.r2_2 = exports.r2_1 = exports.r2_0 = void 0;
+exports.r2_0 = v2_0.p0_a.p0_b.p0_c + 0;
+exports.r2_1 = v2_1.p1_a.p1_b.p1_c + 1;
+exports.r2_2 = v2_2.p2_a.p2_b.p2_c + 2;
+exports.r2_3 = v2_3.p3_a.p3_b.p3_c + 3;
+exports.r2_4 = v2_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\pad3.d.ts
+export declare const r3_0: number;
+export declare const r3_1: number;
+export declare const r3_2: number;
+export declare const r3_3: number;
+export declare const r3_4: number;
+
+#file g1\pad3.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r3_4 = exports.r3_3 = exports.r3_2 = exports.r3_1 = exports.r3_0 = void 0;
+exports.r3_0 = v3_0.p0_a.p0_b.p0_c + 0;
+exports.r3_1 = v3_1.p1_a.p1_b.p1_c + 1;
+exports.r3_2 = v3_2.p2_a.p2_b.p2_c + 2;
+exports.r3_3 = v3_3.p3_a.p3_b.p3_c + 3;
+exports.r3_4 = v3_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\u1.d.ts
+export {};
+export declare const qu1ts_0: number;
+export declare const qu1ts_1: number;
+export declare const qu1ts_2: number;
+export declare const qu1ts_3: number;
+export declare const qu1ts_4: number;
+export declare const qu1ts_5: number;
+export declare const qu1ts_6: number;
+export declare const qu1ts_7: number;
+
+#file g1\u1.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu1ts_7 = exports.qu1ts_6 = exports.qu1ts_5 = exports.qu1ts_4 = exports.qu1ts_3 = exports.qu1ts_2 = exports.qu1ts_1 = exports.qu1ts_0 = void 0;
+b1 = b2;
+exports.qu1ts_0 = wu1ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu1ts_1 = wu1ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu1ts_2 = wu1ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu1ts_3 = wu1ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu1ts_4 = wu1ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu1ts_5 = wu1ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu1ts_6 = wu1ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu1ts_7 = wu1ts_7.p7_a.p7_b.p7_c + 7;
+
+#file g1\u2.d.ts
+export {};
+export declare const qu2ts_0: number;
+export declare const qu2ts_1: number;
+export declare const qu2ts_2: number;
+export declare const qu2ts_3: number;
+export declare const qu2ts_4: number;
+export declare const qu2ts_5: number;
+export declare const qu2ts_6: number;
+export declare const qu2ts_7: number;
+
+#file g1\u2.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu2ts_7 = exports.qu2ts_6 = exports.qu2ts_5 = exports.qu2ts_4 = exports.qu2ts_3 = exports.qu2ts_2 = exports.qu2ts_1 = exports.qu2ts_0 = void 0;
+const r = new Box().m();
+exports.qu2ts_0 = wu2ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu2ts_1 = wu2ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu2ts_2 = wu2ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu2ts_3 = wu2ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu2ts_4 = wu2ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu2ts_5 = wu2ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu2ts_6 = wu2ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu2ts_7 = wu2ts_7.p7_a.p7_b.p7_c + 7;
+
+#file g1\u3.d.ts
+export {};
+export declare const qu3ts_0: number;
+export declare const qu3ts_1: number;
+export declare const qu3ts_2: number;
+export declare const qu3ts_3: number;
+export declare const qu3ts_4: number;
+export declare const qu3ts_5: number;
+export declare const qu3ts_6: number;
+export declare const qu3ts_7: number;
+
+#file g1\u3.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu3ts_7 = exports.qu3ts_6 = exports.qu3ts_5 = exports.qu3ts_4 = exports.qu3ts_3 = exports.qu3ts_2 = exports.qu3ts_1 = exports.qu3ts_0 = void 0;
+c1 = c2;
+exports.qu3ts_0 = wu3ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu3ts_1 = wu3ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu3ts_2 = wu3ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu3ts_3 = wu3ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu3ts_4 = wu3ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu3ts_5 = wu3ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu3ts_6 = wu3ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu3ts_7 = wu3ts_7.p7_a.p7_b.p7_c + 7;
+
+#file g1\u4.d.ts
+export {};
+export declare const qu4ts_0: number;
+export declare const qu4ts_1: number;
+export declare const qu4ts_2: number;
+export declare const qu4ts_3: number;
+export declare const qu4ts_4: number;
+export declare const qu4ts_5: number;
+export declare const qu4ts_6: number;
+export declare const qu4ts_7: number;
+
+#file g1\u4.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu4ts_7 = exports.qu4ts_6 = exports.qu4ts_5 = exports.qu4ts_4 = exports.qu4ts_3 = exports.qu4ts_2 = exports.qu4ts_1 = exports.qu4ts_0 = void 0;
+const s = new Box2().n();
+exports.qu4ts_0 = wu4ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu4ts_1 = wu4ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu4ts_2 = wu4ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu4ts_3 = wu4ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu4ts_4 = wu4ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu4ts_5 = wu4ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu4ts_6 = wu4ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu4ts_7 = wu4ts_7.p7_a.p7_b.p7_c + 7;
+
+#file g1\u5.d.ts
+export {};
+export declare const qu5ts_0: number;
+export declare const qu5ts_1: number;
+export declare const qu5ts_2: number;
+export declare const qu5ts_3: number;
+export declare const qu5ts_4: number;
+export declare const qu5ts_5: number;
+export declare const qu5ts_6: number;
+export declare const qu5ts_7: number;
+
+#file g1\u5.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu5ts_7 = exports.qu5ts_6 = exports.qu5ts_5 = exports.qu5ts_4 = exports.qu5ts_3 = exports.qu5ts_2 = exports.qu5ts_1 = exports.qu5ts_0 = void 0;
+const t = new Box2().g;
+exports.qu5ts_0 = wu5ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu5ts_1 = wu5ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu5ts_2 = wu5ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu5ts_3 = wu5ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu5ts_4 = wu5ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu5ts_5 = wu5ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu5ts_6 = wu5ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu5ts_7 = wu5ts_7.p7_a.p7_b.p7_c + 7;
+
+#file g1\u6.d.ts
+export {};
+export declare const qu6ts_0: number;
+export declare const qu6ts_1: number;
+export declare const qu6ts_2: number;
+export declare const qu6ts_3: number;
+export declare const qu6ts_4: number;
+export declare const qu6ts_5: number;
+export declare const qu6ts_6: number;
+export declare const qu6ts_7: number;
+
+#file g1\u6.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu6ts_7 = exports.qu6ts_6 = exports.qu6ts_5 = exports.qu6ts_4 = exports.qu6ts_3 = exports.qu6ts_2 = exports.qu6ts_1 = exports.qu6ts_0 = void 0;
+d1 = d2;
+exports.qu6ts_0 = wu6ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu6ts_1 = wu6ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu6ts_2 = wu6ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu6ts_3 = wu6ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu6ts_4 = wu6ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu6ts_5 = wu6ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu6ts_6 = wu6ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu6ts_7 = wu6ts_7.p7_a.p7_b.p7_c + 7;
+
+#file g1\u7.d.ts
+export {};
+export declare const qu7ts_0: number;
+export declare const qu7ts_1: number;
+export declare const qu7ts_2: number;
+export declare const qu7ts_3: number;
+export declare const qu7ts_4: number;
+export declare const qu7ts_5: number;
+export declare const qu7ts_6: number;
+export declare const qu7ts_7: number;
+
+#file g1\u7.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu7ts_7 = exports.qu7ts_6 = exports.qu7ts_5 = exports.qu7ts_4 = exports.qu7ts_3 = exports.qu7ts_2 = exports.qu7ts_1 = exports.qu7ts_0 = void 0;
+function f(x) { }
+f(null);
+exports.qu7ts_0 = wu7ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu7ts_1 = wu7ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu7ts_2 = wu7ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu7ts_3 = wu7ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu7ts_4 = wu7ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu7ts_5 = wu7ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu7ts_6 = wu7ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu7ts_7 = wu7ts_7.p7_a.p7_b.p7_c + 7;
+
+#file g1\u8.d.ts
+export {};
+export declare const qu8ts_0: number;
+export declare const qu8ts_1: number;
+export declare const qu8ts_2: number;
+export declare const qu8ts_3: number;
+export declare const qu8ts_4: number;
+export declare const qu8ts_5: number;
+export declare const qu8ts_6: number;
+export declare const qu8ts_7: number;
+
+#file g1\u8.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu8ts_7 = exports.qu8ts_6 = exports.qu8ts_5 = exports.qu8ts_4 = exports.qu8ts_3 = exports.qu8ts_2 = exports.qu8ts_1 = exports.qu8ts_0 = void 0;
+e1 = e2;
+const u = new Box2().n();
+exports.qu8ts_0 = wu8ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu8ts_1 = wu8ts_1.p1_a.p1_b.p1_c + 1;
+exports.qu8ts_2 = wu8ts_2.p2_a.p2_b.p2_c + 2;
+exports.qu8ts_3 = wu8ts_3.p3_a.p3_b.p3_c + 3;
+exports.qu8ts_4 = wu8ts_4.p4_a.p4_b.p4_c + 4;
+exports.qu8ts_5 = wu8ts_5.p5_a.p5_b.p5_c + 5;
+exports.qu8ts_6 = wu8ts_6.p6_a.p6_b.p6_c + 6;
+exports.qu8ts_7 = wu8ts_7.p7_a.p7_b.p7_c + 7;

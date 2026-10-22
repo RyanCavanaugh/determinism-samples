@@ -1,0 +1,10 @@
+[96mdecl.ts[0m:[93m1[0m:[93m29[0m - [91merror[0m[90m TS2313: [0mType parameter 'U' has a circular constraint.
+
+[7m1[0m export function f<U extends U>(x: U): U { return x; }
+[7m [0m [91m                            ~[0m
+
+
+Found 1 error in decl.ts[90m:1[0m
+
+
+#exit 2

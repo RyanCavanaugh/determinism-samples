@@ -1,0 +1,17 @@
+{
+ "compilerOptions": {
+  "types": [],
+  "noEmit": true,
+  "strict": true,
+  "skipLibCheck": true
+ },
+ "files": [
+  "g1/recur.ts",
+  "g1/join.ts",
+  "g1/a.ts",
+  "g1/pad0.ts",
+  "g1/pad1.ts",
+  "g1/pad2.ts",
+  "g1/pad3.ts"
+ ]
+}

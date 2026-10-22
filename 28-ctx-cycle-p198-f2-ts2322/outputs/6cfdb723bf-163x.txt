@@ -1,0 +1,5 @@
+f0.ts(5,14): error TS7022: 'v0' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+f1.ts(5,25): error TS7006: Parameter 'x' implicitly has an 'any' type.
+f3.ts(6,14): error TS7022: 'v1' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+
+#exit 2

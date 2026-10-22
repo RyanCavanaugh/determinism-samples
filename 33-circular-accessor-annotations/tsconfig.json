@@ -1,0 +1,21 @@
+{
+ "compilerOptions": {
+  "strict": true,
+  "declaration": true,
+  "outDir": "out",
+  "target": "es2015",
+  "types": [],
+  "skipLibCheck": true
+ },
+ "files": [
+  "d.ts",
+  "pad0.ts",
+  "pad1.ts",
+  "pad2.ts",
+  "pad3.ts",
+  "pad4.ts",
+  "pad5.ts",
+  "u1.ts",
+  "u2.ts"
+ ]
+}

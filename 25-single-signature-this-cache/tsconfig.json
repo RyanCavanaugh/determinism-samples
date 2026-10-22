@@ -1,0 +1,1 @@
+{"compilerOptions":{"strict":true,"declaration":true,"outDir":"out","target":"es2015","types":[],"skipLibCheck":true},"files":["a.ts","b.ts","decl.ts"]}

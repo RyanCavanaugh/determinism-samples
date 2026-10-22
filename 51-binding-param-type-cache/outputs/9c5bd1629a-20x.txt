@@ -1,0 +1,26 @@
+g1/decl.ts(1,22): error TS7031: Binding element 'x' implicitly has an 'any' type.
+g1/decl.ts(1,25): error TS7031: Binding element 'y' implicitly has an 'any' type.
+g1/decl.ts(2,22): error TS7031: Binding element 'x' implicitly has an 'any' type.
+g1/decl.ts(2,63): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(3,46): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(3,67): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(4,55): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(4,76): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(5,53): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(5,74): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(6,51): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(6,72): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(7,65): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(7,86): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(8,21): error TS7031: Binding element 'x' implicitly has an 'any' type.
+g1/decl.ts(8,24): error TS7031: Binding element 'y' implicitly has an 'any' type.
+g1/decl.ts(9,44): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(9,65): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(10,45): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(10,66): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(11,46): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(11,67): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(12,49): error TS2322: Type 'number' is not assignable to type 'string'.
+g1/decl.ts(12,70): error TS2322: Type 'number' is not assignable to type 'string'.
+
+#exit 2

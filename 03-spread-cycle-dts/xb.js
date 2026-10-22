@@ -1,0 +1,23 @@
+const s0 = /** @type {import("./slow").S0<{ a: { b: { c: number, d: string }, e: boolean }, f: 0 }>} */ (/** @type {any} */ (null)).q0_a.q0_b.q0_c;
+const s1 = /** @type {import("./slow").S1<{ a: { b: { c: number, d: string }, e: boolean }, f: 1 }>} */ (/** @type {any} */ (null)).q1_a.q1_b.q1_c;
+const s2 = /** @type {import("./slow").S2<{ a: { b: { c: number, d: string }, e: boolean }, f: 2 }>} */ (/** @type {any} */ (null)).q2_a.q2_b.q2_c;
+const s3 = /** @type {import("./slow").S3<{ a: { b: { c: number, d: string }, e: boolean }, f: 3 }>} */ (/** @type {any} */ (null)).q3_a.q3_b.q3_c;
+const s4 = /** @type {import("./slow").S4<{ a: { b: { c: number, d: string }, e: boolean }, f: 4 }>} */ (/** @type {any} */ (null)).q4_a.q4_b.q4_c;
+const s5 = /** @type {import("./slow").S5<{ a: { b: { c: number, d: string }, e: boolean }, f: 5 }>} */ (/** @type {any} */ (null)).q5_a.q5_b.q5_c;
+const s6 = /** @type {import("./slow").S6<{ a: { b: { c: number, d: string }, e: boolean }, f: 6 }>} */ (/** @type {any} */ (null)).q6_a.q6_b.q6_c;
+const s7 = /** @type {import("./slow").S7<{ a: { b: { c: number, d: string }, e: boolean }, f: 7 }>} */ (/** @type {any} */ (null)).q7_a.q7_b.q7_c;
+const s8 = /** @type {import("./slow").S8<{ a: { b: { c: number, d: string }, e: boolean }, f: 8 }>} */ (/** @type {any} */ (null)).q8_a.q8_b.q8_c;
+const s9 = /** @type {import("./slow").S9<{ a: { b: { c: number, d: string }, e: boolean }, f: 9 }>} */ (/** @type {any} */ (null)).q9_a.q9_b.q9_c;
+const s10 = /** @type {import("./slow").S10<{ a: { b: { c: number, d: string }, e: boolean }, f: 10 }>} */ (/** @type {any} */ (null)).q10_a.q10_b.q10_c;
+const s11 = /** @type {import("./slow").S11<{ a: { b: { c: number, d: string }, e: boolean }, f: 11 }>} */ (/** @type {any} */ (null)).q11_a.q11_b.q11_c;
+const s12 = /** @type {import("./slow").S12<{ a: { b: { c: number, d: string }, e: boolean }, f: 12 }>} */ (/** @type {any} */ (null)).q12_a.q12_b.q12_c;
+const s13 = /** @type {import("./slow").S13<{ a: { b: { c: number, d: string }, e: boolean }, f: 13 }>} */ (/** @type {any} */ (null)).q13_a.q13_b.q13_c;
+const s14 = /** @type {import("./slow").S14<{ a: { b: { c: number, d: string }, e: boolean }, f: 14 }>} */ (/** @type {any} */ (null)).q14_a.q14_b.q14_c;
+const s15 = /** @type {import("./slow").S15<{ a: { b: { c: number, d: string }, e: boolean }, f: 15 }>} */ (/** @type {any} */ (null)).q15_a.q15_b.q15_c;
+const s16 = /** @type {import("./slow").S16<{ a: { b: { c: number, d: string }, e: boolean }, f: 16 }>} */ (/** @type {any} */ (null)).q16_a.q16_b.q16_c;
+const s17 = /** @type {import("./slow").S17<{ a: { b: { c: number, d: string }, e: boolean }, f: 17 }>} */ (/** @type {any} */ (null)).q17_a.q17_b.q17_c;
+const s18 = /** @type {import("./slow").S18<{ a: { b: { c: number, d: string }, e: boolean }, f: 18 }>} */ (/** @type {any} */ (null)).q18_a.q18_b.q18_c;
+const s19 = /** @type {import("./slow").S19<{ a: { b: { c: number, d: string }, e: boolean }, f: 19 }>} */ (/** @type {any} */ (null)).q19_a.q19_b.q19_c;
+/** @type {typeof import("./ma")} */
+const M = /** @type {any} */ (null);
+module.exports = { v: { ...M } };

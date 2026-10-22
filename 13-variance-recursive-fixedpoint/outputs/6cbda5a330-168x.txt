@@ -1,0 +1,239 @@
+g1/u2.ts(1,1): error TS2322: Type 'Listener<string>' is not assignable to type 'Listener<unknown>'.
+  Type 'unknown' is not assignable to type 'string'.
+g1/u3.ts(1,1): error TS2322: Type 'ColumnDef<{ name: string; }, string>' is not assignable to type 'ColumnDef<{ name: string; }, unknown>'.
+  Type 'unknown' is not assignable to type 'string'.
+g1/u5.ts(1,27): error TS2322: Type 'Tree<unknown>' is not assignable to type 'Tree<string>'.
+  Type 'unknown' is not assignable to type 'string'.
+g1/u6.ts(1,1): error TS2322: Type 'Outer<string>' is not assignable to type 'Outer<unknown>'.
+  Types of property 'next' are incompatible.
+    Type 'Inner<Outer<string>>' is not assignable to type 'Inner<Outer<unknown>>'.
+      Type 'Outer<unknown>' is not assignable to type 'Outer<string>'.
+        Types of property 'value' are incompatible.
+          Type 'unknown' is not assignable to type 'string'.
+g1/u6.ts(1,10): error TS2322: Type 'Outer<unknown>' is not assignable to type 'Outer<string>'.
+  Types of property 'value' are incompatible.
+    Type 'unknown' is not assignable to type 'string'.
+g1/u7.ts(1,10): error TS2322: Type 'GenericMethod<unknown>' is not assignable to type 'GenericMethod<string>'.
+  Type 'unknown' is not assignable to type 'string'.
+
+#exit 2
+#file g1\decl.d.ts
+interface Store<T> {
+    value: T;
+    listener: Listener<T>;
+}
+type Listener<T> = (batch: Store<T[]>) => void;
+interface ColumnDef<Row, Value = unknown> {
+    cell?: (column: Column<Row, Value>) => void;
+}
+interface Column<Row, Value = unknown> {
+    accessorFn?: (row: Row) => Value;
+    columnDef: ColumnDef<Row, Value>;
+}
+interface Tree<T> {
+    readonly value: T;
+    readonly children: readonly Tree<T>[];
+    readonly metadata: Map<string, number>;
+}
+interface Outer<T> {
+    value: T;
+    next: Inner<Outer<T>>;
+}
+interface Inner<T> {
+    consume: (value: T) => void;
+}
+interface GenericMethod<T> {
+    value: T;
+    next: <U>(value: U) => GenericMethod<T>;
+}
+interface Method<T> {
+    value: T;
+    accept(value: Method<T>): void;
+}
+interface Projected<T extends {
+    value: unknown;
+}> {
+    value: T["value"];
+    next: Projected<T>;
+}
+declare let strings: Store<string>;
+declare let unknowns: Store<unknown>;
+declare let stringListener: Listener<string>;
+declare let unknownListener: Listener<unknown>;
+declare let stringColumn: ColumnDef<{
+    name: string;
+}, string>;
+declare let unknownColumn: ColumnDef<{
+    name: string;
+}, unknown>;
+declare let stringTree: Tree<string>;
+declare let unknownTree: Tree<unknown>;
+declare let os: Outer<string>, ou: Outer<unknown>;
+declare let gs: GenericMethod<string>, gu: GenericMethod<unknown>;
+declare let ms: Method<string>, mu: Method<unknown>;
+declare let projected: Projected<{
+    value: string;
+    extra: number;
+}>;
+
+#file g1\decl.js
+"use strict";
+
+#file g1\pad0.d.ts
+export declare const r0_0: number;
+export declare const r0_1: number;
+export declare const r0_2: number;
+export declare const r0_3: number;
+export declare const r0_4: number;
+
+#file g1\pad0.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r0_4 = exports.r0_3 = exports.r0_2 = exports.r0_1 = exports.r0_0 = void 0;
+exports.r0_0 = v0_0.p0_a.p0_b.p0_c + 0;
+exports.r0_1 = v0_1.p1_a.p1_b.p1_c + 1;
+exports.r0_2 = v0_2.p2_a.p2_b.p2_c + 2;
+exports.r0_3 = v0_3.p3_a.p3_b.p3_c + 3;
+exports.r0_4 = v0_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\pad1.d.ts
+export declare const r1_0: number;
+export declare const r1_1: number;
+export declare const r1_2: number;
+export declare const r1_3: number;
+export declare const r1_4: number;
+
+#file g1\pad1.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r1_4 = exports.r1_3 = exports.r1_2 = exports.r1_1 = exports.r1_0 = void 0;
+exports.r1_0 = v1_0.p0_a.p0_b.p0_c + 0;
+exports.r1_1 = v1_1.p1_a.p1_b.p1_c + 1;
+exports.r1_2 = v1_2.p2_a.p2_b.p2_c + 2;
+exports.r1_3 = v1_3.p3_a.p3_b.p3_c + 3;
+exports.r1_4 = v1_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\pad2.d.ts
+export declare const r2_0: number;
+export declare const r2_1: number;
+export declare const r2_2: number;
+export declare const r2_3: number;
+export declare const r2_4: number;
+
+#file g1\pad2.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r2_4 = exports.r2_3 = exports.r2_2 = exports.r2_1 = exports.r2_0 = void 0;
+exports.r2_0 = v2_0.p0_a.p0_b.p0_c + 0;
+exports.r2_1 = v2_1.p1_a.p1_b.p1_c + 1;
+exports.r2_2 = v2_2.p2_a.p2_b.p2_c + 2;
+exports.r2_3 = v2_3.p3_a.p3_b.p3_c + 3;
+exports.r2_4 = v2_4.p4_a.p4_b.p4_c + 4;
+
+#file g1\u1.d.ts
+export {};
+export declare const qu1ts_0: number;
+export declare const qu1ts_1: number;
+
+#file g1\u1.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu1ts_1 = exports.qu1ts_0 = void 0;
+unknowns = strings;
+exports.qu1ts_0 = wu1ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu1ts_1 = wu1ts_1.p1_a.p1_b.p1_c + 1;
+
+#file g1\u2.d.ts
+export {};
+export declare const qu2ts_0: number;
+export declare const qu2ts_1: number;
+
+#file g1\u2.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu2ts_1 = exports.qu2ts_0 = void 0;
+unknownListener = stringListener;
+exports.qu2ts_0 = wu2ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu2ts_1 = wu2ts_1.p1_a.p1_b.p1_c + 1;
+
+#file g1\u3.d.ts
+export {};
+export declare const qu3ts_0: number;
+export declare const qu3ts_1: number;
+
+#file g1\u3.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu3ts_1 = exports.qu3ts_0 = void 0;
+unknownColumn = stringColumn;
+exports.qu3ts_0 = wu3ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu3ts_1 = wu3ts_1.p1_a.p1_b.p1_c + 1;
+
+#file g1\u4.d.ts
+export {};
+export declare const qu4ts_0: number;
+export declare const qu4ts_1: number;
+
+#file g1\u4.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu4ts_1 = exports.qu4ts_0 = void 0;
+stringColumn = unknownColumn;
+exports.qu4ts_0 = wu4ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu4ts_1 = wu4ts_1.p1_a.p1_b.p1_c + 1;
+
+#file g1\u5.d.ts
+export {};
+export declare const qu5ts_0: number;
+export declare const qu5ts_1: number;
+
+#file g1\u5.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu5ts_1 = exports.qu5ts_0 = void 0;
+unknownTree = stringTree;
+stringTree = unknownTree;
+exports.qu5ts_0 = wu5ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu5ts_1 = wu5ts_1.p1_a.p1_b.p1_c + 1;
+
+#file g1\u6.d.ts
+export {};
+export declare const qu6ts_0: number;
+export declare const qu6ts_1: number;
+
+#file g1\u6.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu6ts_1 = exports.qu6ts_0 = void 0;
+ou = os;
+os = ou;
+exports.qu6ts_0 = wu6ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu6ts_1 = wu6ts_1.p1_a.p1_b.p1_c + 1;
+
+#file g1\u7.d.ts
+export {};
+export declare const qu7ts_0: number;
+export declare const qu7ts_1: number;
+
+#file g1\u7.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu7ts_1 = exports.qu7ts_0 = void 0;
+gu = gs;
+gs = gu;
+exports.qu7ts_0 = wu7ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu7ts_1 = wu7ts_1.p1_a.p1_b.p1_c + 1;
+
+#file g1\u8.d.ts
+export {};
+export declare const qu8ts_0: number;
+export declare const qu8ts_1: number;
+
+#file g1\u8.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu8ts_1 = exports.qu8ts_0 = void 0;
+mu = ms;
+const widened = projected;
+exports.qu8ts_0 = wu8ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu8ts_1 = wu8ts_1.p1_a.p1_b.p1_c + 1;

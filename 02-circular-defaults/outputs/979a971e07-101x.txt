@@ -1,0 +1,105 @@
+a.ts(2,24): error TS2716: Type parameter 'T' has a circular default.
+
+#exit 2
+#file a.d.ts
+import type { B } from "./b";
+export interface A<T = B> {
+    a: T;
+}
+export declare const a: A;
+
+#file a.js
+export {};
+
+#file b.d.ts
+import type { A } from "./a";
+export declare const Br0: number;
+export declare const Br1: number;
+export declare const Br2: number;
+export declare const Br3: number;
+export declare const Br4: number;
+export declare const Br5: number;
+export declare const Br6: number;
+export declare const Br7: number;
+export declare const Br8: number;
+export declare const Br9: number;
+export declare const Br10: number;
+export declare const Br11: number;
+export declare const Br12: number;
+export declare const Br13: number;
+export declare const Br14: number;
+export declare const Br15: number;
+export declare const Br16: number;
+export declare const Br17: number;
+export declare const Br18: number;
+export declare const Br19: number;
+export interface B<U = A> {
+    b: U;
+}
+export declare const b: B;
+
+#file b.js
+export const Br0 = Bv0.q0_a.q0_b.q0_c + 0;
+export const Br1 = Bv1.q1_a.q1_b.q1_c + 1;
+export const Br2 = Bv2.q2_a.q2_b.q2_c + 2;
+export const Br3 = Bv3.q3_a.q3_b.q3_c + 3;
+export const Br4 = Bv4.q4_a.q4_b.q4_c + 4;
+export const Br5 = Bv5.q5_a.q5_b.q5_c + 5;
+export const Br6 = Bv6.q6_a.q6_b.q6_c + 6;
+export const Br7 = Bv7.q7_a.q7_b.q7_c + 7;
+export const Br8 = Bv8.q8_a.q8_b.q8_c + 8;
+export const Br9 = Bv9.q9_a.q9_b.q9_c + 9;
+export const Br10 = Bv10.q10_a.q10_b.q10_c + 10;
+export const Br11 = Bv11.q11_a.q11_b.q11_c + 11;
+export const Br12 = Bv12.q12_a.q12_b.q12_c + 12;
+export const Br13 = Bv13.q13_a.q13_b.q13_c + 13;
+export const Br14 = Bv14.q14_a.q14_b.q14_c + 14;
+export const Br15 = Bv15.q15_a.q15_b.q15_c + 15;
+export const Br16 = Bv16.q16_a.q16_b.q16_c + 16;
+export const Br17 = Bv17.q17_a.q17_b.q17_c + 17;
+export const Br18 = Bv18.q18_a.q18_b.q18_c + 18;
+export const Br19 = Bv19.q19_a.q19_b.q19_c + 19;
+
+#file pad.d.ts
+export declare const Pr0: number;
+export declare const Pr1: number;
+export declare const Pr2: number;
+export declare const Pr3: number;
+export declare const Pr4: number;
+export declare const Pr5: number;
+export declare const Pr6: number;
+export declare const Pr7: number;
+export declare const Pr8: number;
+export declare const Pr9: number;
+export declare const Pr10: number;
+export declare const Pr11: number;
+export declare const Pr12: number;
+export declare const Pr13: number;
+export declare const Pr14: number;
+export declare const Pr15: number;
+export declare const Pr16: number;
+export declare const Pr17: number;
+export declare const Pr18: number;
+export declare const Pr19: number;
+
+#file pad.js
+export const Pr0 = Pv0.q0_a.q0_b.q0_c + 0;
+export const Pr1 = Pv1.q1_a.q1_b.q1_c + 1;
+export const Pr2 = Pv2.q2_a.q2_b.q2_c + 2;
+export const Pr3 = Pv3.q3_a.q3_b.q3_c + 3;
+export const Pr4 = Pv4.q4_a.q4_b.q4_c + 4;
+export const Pr5 = Pv5.q5_a.q5_b.q5_c + 5;
+export const Pr6 = Pv6.q6_a.q6_b.q6_c + 6;
+export const Pr7 = Pv7.q7_a.q7_b.q7_c + 7;
+export const Pr8 = Pv8.q8_a.q8_b.q8_c + 8;
+export const Pr9 = Pv9.q9_a.q9_b.q9_c + 9;
+export const Pr10 = Pv10.q10_a.q10_b.q10_c + 10;
+export const Pr11 = Pv11.q11_a.q11_b.q11_c + 11;
+export const Pr12 = Pv12.q12_a.q12_b.q12_c + 12;
+export const Pr13 = Pv13.q13_a.q13_b.q13_c + 13;
+export const Pr14 = Pv14.q14_a.q14_b.q14_c + 14;
+export const Pr15 = Pv15.q15_a.q15_b.q15_c + 15;
+export const Pr16 = Pv16.q16_a.q16_b.q16_c + 16;
+export const Pr17 = Pv17.q17_a.q17_b.q17_c + 17;
+export const Pr18 = Pv18.q18_a.q18_b.q18_c + 18;
+export const Pr19 = Pv19.q19_a.q19_b.q19_c + 19;

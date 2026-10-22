@@ -1,0 +1,16 @@
+{
+ "compilerOptions": {
+  "types": [],
+  "noEmit": false,
+  "target": "es2015",
+  "skipLibCheck": true,
+  "declaration": true,
+  "outDir": "out",
+  "module": "commonjs"
+ },
+ "files": [
+  "decl.ts",
+  "pad0.ts",
+  "use2.ts"
+ ]
+}

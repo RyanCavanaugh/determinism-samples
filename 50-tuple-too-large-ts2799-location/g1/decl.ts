@@ -1,0 +1,15 @@
+type T0 = [any];
+type T1 = [...T0, ...T0];
+export type T2 = [...T1, ...T1];
+export type T3 = [...T2, ...T2];
+export type T4 = [...T3, ...T3];
+export type T5 = [...T4, ...T4];
+export type T6 = [...T5, ...T5];
+export type T7 = [...T6, ...T6];
+export type T8 = [...T7, ...T7];
+export type T9 = [...T8, ...T8];
+export type T10 = [...T9, ...T9];
+export type T11 = [...T10, ...T10];
+export type T12 = [...T11, ...T11];
+export type T13 = [...T12, ...T12];
+export type T14 = [...T13, ...T13];

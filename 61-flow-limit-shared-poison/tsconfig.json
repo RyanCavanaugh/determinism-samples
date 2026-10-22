@@ -1,0 +1,14 @@
+{
+ "compilerOptions": {
+  "types": [],
+  "noEmit": true,
+  "target": "es2015",
+  "skipLibCheck": true,
+  "strict": true
+ },
+ "files": [
+  "decl.ts",
+  "use1.ts",
+  "use2.ts"
+ ]
+}

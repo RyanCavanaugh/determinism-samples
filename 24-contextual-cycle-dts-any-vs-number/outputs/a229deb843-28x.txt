@@ -1,0 +1,78 @@
+f1.ts(6,14): error TS7022: 'v0' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+f1.ts(6,31): error TS7024: Function implicitly has return type 'any' because it does not have a return type annotation and is referenced directly or indirectly in one of its return expressions.
+f2.ts(6,14): error TS7022: 'v0' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+f2.ts(6,27): error TS7024: Function implicitly has return type 'any' because it does not have a return type annotation and is referenced directly or indirectly in one of its return expressions.
+f2.ts(6,40): error TS7024: Function implicitly has return type 'any' because it does not have a return type annotation and is referenced directly or indirectly in one of its return expressions.
+
+#exit 2
+#file f0.d.ts
+export declare const v0: number;
+export declare const v1: number;
+
+#file f1.d.ts
+export declare const v0: any;
+export declare const v1 = 1;
+
+#file f2.d.ts
+export declare const v0: any;
+export declare const v1 = 1;
+
+#file f3.d.ts
+export declare const v0: number;
+export declare const v1: any;
+
+#file f4.d.ts
+export declare const v0: (x: number) => any;
+export declare const v1: number;
+
+#file lib.d.ts
+export declare function fun<T>(g: (x: T) => T, h: (y: T) => T, x: T): T;
+export declare function pipe<A, B>(a: A, f: (a: A) => B): B;
+export declare function id<T>(x: T): T;
+export declare function call<T>(f: () => T): T;
+export declare function wrap<T>(x: T): {
+    v: T;
+};
+export declare function both<T, U>(f: (t: T) => U, g: (u: U) => T): [T, U];
+export declare function mk<T extends {
+    a: unknown;
+}>(f: (x: T) => T): T;
+export declare const arr: {
+    map<U>(f: (x: number) => U): U[];
+};
+
+#file pad0.d.ts
+export declare const r0_0: number;
+export declare const r0_1: number;
+export declare const r0_2: number;
+export declare const r0_3: number;
+export declare const r0_4: number;
+export declare const r0_5: number;
+export declare const r0_6: number;
+export declare const r0_7: number;
+export declare const r0_8: number;
+export declare const r0_9: number;
+
+#file pad1.d.ts
+export declare const r1_0: number;
+export declare const r1_1: number;
+export declare const r1_2: number;
+export declare const r1_3: number;
+export declare const r1_4: number;
+export declare const r1_5: number;
+export declare const r1_6: number;
+export declare const r1_7: number;
+export declare const r1_8: number;
+export declare const r1_9: number;
+
+#file pad2.d.ts
+export declare const r2_0: number;
+export declare const r2_1: number;
+export declare const r2_2: number;
+export declare const r2_3: number;
+export declare const r2_4: number;
+export declare const r2_5: number;
+export declare const r2_6: number;
+export declare const r2_7: number;
+export declare const r2_8: number;
+export declare const r2_9: number;

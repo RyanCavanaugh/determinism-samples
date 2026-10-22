@@ -1,0 +1,15 @@
+{
+ "compilerOptions": {
+  "types": [],
+  "noEmit": false,
+  "strict": true,
+  "declaration": true,
+  "outDir": "out",
+  "skipLibCheck": true
+ },
+ "files": [
+  "pad.ts",
+  "a.ts",
+  "b.ts"
+ ]
+}

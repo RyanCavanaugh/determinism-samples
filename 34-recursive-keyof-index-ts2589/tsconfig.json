@@ -1,0 +1,17 @@
+{
+ "compilerOptions": {
+  "strict": true,
+  "declaration": true,
+  "outDir": "out",
+  "target": "esnext",
+  "types": [],
+  "skipLibCheck": true
+ },
+ "files": [
+  "k.ts",
+  "pad0.ts",
+  "j.ts",
+  "u1.ts",
+  "u2.ts"
+ ]
+}

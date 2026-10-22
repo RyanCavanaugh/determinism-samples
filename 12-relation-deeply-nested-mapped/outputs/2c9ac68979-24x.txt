@@ -1,0 +1,206 @@
+g1/u1.ts(1,1): error TS2322: Type 'A<{ a: string; }>' is not assignable to type 'A<{ a: "lit"; }>'.
+  Types of property 'm0' are incompatible.
+    Type '(x: B<{ a: string; }>) => void' is not assignable to type '(x: B<{ a: "lit"; }>) => void'.
+      Types of parameters 'x' and 'x' are incompatible.
+        Type 'B<{ a: "lit"; }>' is not assignable to type 'B<{ a: string; }>'.
+          The types of 'm0.m1.a.m0.m0' are incompatible between these types.
+            Type '(x: B<"lit">) => void' is not assignable to type '(x: B<string>) => void'.
+              Types of parameters 'x' and 'x' are incompatible.
+                Type 'B<string>' is not assignable to type 'B<"lit">'.
+                  The types of 'm0.m1' are incompatible between these types.
+                    Type 'string' is not assignable to type '"lit"'.
+g1/u2.ts(1,1): error TS2322: Type 'B<{ a: string; }>' is not assignable to type 'B<{ a: "lit"; }>'.
+  The types of 'm0.m1.a.m0.m1' are incompatible between these types.
+    Type 'string' is not assignable to type '"lit"'.
+g1/u3.ts(1,1): error TS2322: Type 'A<{ a: string; }>' is not assignable to type 'A<{ a: "lit"; }>'.
+  Types of property 'm0' are incompatible.
+    Type '(x: B<{ a: string; }>) => void' is not assignable to type '(x: B<{ a: "lit"; }>) => void'.
+      Types of parameters 'x' and 'x' are incompatible.
+        Type 'B<{ a: "lit"; }>' is not assignable to type 'B<{ a: string; }>'.
+          The types of 'm0.m1.a.m0.m0' are incompatible between these types.
+            Type '(x: B<"lit">) => void' is not assignable to type '(x: B<string>) => void'.
+              Types of parameters 'x' and 'x' are incompatible.
+                Type 'B<string>' is not assignable to type 'B<"lit">'.
+                  The types of 'm0.m1' are incompatible between these types.
+                    Type 'string' is not assignable to type '"lit"'.
+g1/u3.ts(2,1): error TS2322: Type 'B<{ a: string; }>' is not assignable to type 'B<{ a: "lit"; }>'.
+  The types of 'm0.m0' are incompatible between these types.
+    Type '(x: B<{ a: string; }>) => void' is not assignable to type '(x: B<{ a: "lit"; }>) => void'.
+      Types of parameters 'x' and 'x' are incompatible.
+        Type 'B<{ a: "lit"; }>' is not assignable to type 'B<{ a: string; }>'.
+          The types of 'm0.m1.a.m0.m0' are incompatible between these types.
+            Type '(x: B<"lit">) => void' is not assignable to type '(x: B<string>) => void'.
+              Types of parameters 'x' and 'x' are incompatible.
+                Type 'B<string>' is not assignable to type 'B<"lit">'.
+                  The types of 'm0.m1' are incompatible between these types.
+                    Type 'string' is not assignable to type '"lit"'.
+g1/u4.ts(1,1): error TS2322: Type 'B<{ a: string; }>' is not assignable to type 'B<{ a: "lit"; }>'.
+  The types of 'm0.m0' are incompatible between these types.
+    Type '(x: B<{ a: string; }>) => void' is not assignable to type '(x: B<{ a: "lit"; }>) => void'.
+      Types of parameters 'x' and 'x' are incompatible.
+        Type 'B<{ a: "lit"; }>' is not assignable to type 'B<{ a: string; }>'.
+          The types of 'm0.m1.a.m0.m0' are incompatible between these types.
+            Type '(x: B<"lit">) => void' is not assignable to type '(x: B<string>) => void'.
+              Types of parameters 'x' and 'x' are incompatible.
+                Type 'B<string>' is not assignable to type 'B<"lit">'.
+                  The types of 'm0.m1' are incompatible between these types.
+                    Type 'string' is not assignable to type '"lit"'.
+g1/u4.ts(2,1): error TS2322: Type 'A<{ a: string; }>' is not assignable to type 'A<{ a: "lit"; }>'.
+  Types of property 'm0' are incompatible.
+    Type '(x: B<{ a: string; }>) => void' is not assignable to type '(x: B<{ a: "lit"; }>) => void'.
+      Types of parameters 'x' and 'x' are incompatible.
+        Type 'B<{ a: "lit"; }>' is not assignable to type 'B<{ a: string; }>'.
+          The types of 'm0.m1.a.m0.m0' are incompatible between these types.
+            Type '(x: B<"lit">) => void' is not assignable to type '(x: B<string>) => void'.
+              Types of parameters 'x' and 'x' are incompatible.
+                Type 'B<string>' is not assignable to type 'B<"lit">'.
+                  The types of 'm0.m1' are incompatible between these types.
+                    Type 'string' is not assignable to type '"lit"'.
+
+#exit 2
+#file g1\decl.d.ts
+type A<T> = {
+    m0: (x: B<T>) => void;
+    m1: {
+        [K in keyof T]: B<T[K]>;
+    };
+};
+type B<T> = {
+    m0: A<T>;
+};
+declare let a1: A<{
+    a: string;
+}>, a2: A<{
+    a: "lit";
+}>;
+declare let b1: B<{
+    a: string;
+}>, b2: B<{
+    a: "lit";
+}>;
+
+#file g1\decl.js
+"use strict";
+
+#file g1\pad0.d.ts
+export declare const r0_0: number;
+export declare const r0_1: number;
+export declare const r0_2: number;
+export declare const r0_3: number;
+export declare const r0_4: number;
+export declare const r0_5: number;
+export declare const r0_6: number;
+export declare const r0_7: number;
+
+#file g1\pad0.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r0_7 = exports.r0_6 = exports.r0_5 = exports.r0_4 = exports.r0_3 = exports.r0_2 = exports.r0_1 = exports.r0_0 = void 0;
+exports.r0_0 = v0_0.p0_a.p0_b.p0_c + 0;
+exports.r0_1 = v0_1.p1_a.p1_b.p1_c + 1;
+exports.r0_2 = v0_2.p2_a.p2_b.p2_c + 2;
+exports.r0_3 = v0_3.p3_a.p3_b.p3_c + 3;
+exports.r0_4 = v0_4.p4_a.p4_b.p4_c + 4;
+exports.r0_5 = v0_5.p5_a.p5_b.p5_c + 5;
+exports.r0_6 = v0_6.p6_a.p6_b.p6_c + 6;
+exports.r0_7 = v0_7.p7_a.p7_b.p7_c + 7;
+
+#file g1\pad1.d.ts
+export declare const r1_0: number;
+export declare const r1_1: number;
+export declare const r1_2: number;
+export declare const r1_3: number;
+export declare const r1_4: number;
+export declare const r1_5: number;
+export declare const r1_6: number;
+export declare const r1_7: number;
+
+#file g1\pad1.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r1_7 = exports.r1_6 = exports.r1_5 = exports.r1_4 = exports.r1_3 = exports.r1_2 = exports.r1_1 = exports.r1_0 = void 0;
+exports.r1_0 = v1_0.p0_a.p0_b.p0_c + 0;
+exports.r1_1 = v1_1.p1_a.p1_b.p1_c + 1;
+exports.r1_2 = v1_2.p2_a.p2_b.p2_c + 2;
+exports.r1_3 = v1_3.p3_a.p3_b.p3_c + 3;
+exports.r1_4 = v1_4.p4_a.p4_b.p4_c + 4;
+exports.r1_5 = v1_5.p5_a.p5_b.p5_c + 5;
+exports.r1_6 = v1_6.p6_a.p6_b.p6_c + 6;
+exports.r1_7 = v1_7.p7_a.p7_b.p7_c + 7;
+
+#file g1\pad2.d.ts
+export declare const r2_0: number;
+export declare const r2_1: number;
+export declare const r2_2: number;
+export declare const r2_3: number;
+export declare const r2_4: number;
+export declare const r2_5: number;
+export declare const r2_6: number;
+export declare const r2_7: number;
+
+#file g1\pad2.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.r2_7 = exports.r2_6 = exports.r2_5 = exports.r2_4 = exports.r2_3 = exports.r2_2 = exports.r2_1 = exports.r2_0 = void 0;
+exports.r2_0 = v2_0.p0_a.p0_b.p0_c + 0;
+exports.r2_1 = v2_1.p1_a.p1_b.p1_c + 1;
+exports.r2_2 = v2_2.p2_a.p2_b.p2_c + 2;
+exports.r2_3 = v2_3.p3_a.p3_b.p3_c + 3;
+exports.r2_4 = v2_4.p4_a.p4_b.p4_c + 4;
+exports.r2_5 = v2_5.p5_a.p5_b.p5_c + 5;
+exports.r2_6 = v2_6.p6_a.p6_b.p6_c + 6;
+exports.r2_7 = v2_7.p7_a.p7_b.p7_c + 7;
+
+#file g1\u1.d.ts
+export {};
+export declare const qu1ts_0: number;
+export declare const qu1ts_1: number;
+
+#file g1\u1.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu1ts_1 = exports.qu1ts_0 = void 0;
+a2 = a1;
+exports.qu1ts_0 = wu1ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu1ts_1 = wu1ts_1.p1_a.p1_b.p1_c + 1;
+
+#file g1\u2.d.ts
+export {};
+export declare const qu2ts_0: number;
+export declare const qu2ts_1: number;
+
+#file g1\u2.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu2ts_1 = exports.qu2ts_0 = void 0;
+b2 = b1;
+exports.qu2ts_0 = wu2ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu2ts_1 = wu2ts_1.p1_a.p1_b.p1_c + 1;
+
+#file g1\u3.d.ts
+export {};
+export declare const qu3ts_0: number;
+export declare const qu3ts_1: number;
+
+#file g1\u3.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu3ts_1 = exports.qu3ts_0 = void 0;
+a2 = a1;
+b2 = b1;
+exports.qu3ts_0 = wu3ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu3ts_1 = wu3ts_1.p1_a.p1_b.p1_c + 1;
+
+#file g1\u4.d.ts
+export {};
+export declare const qu4ts_0: number;
+export declare const qu4ts_1: number;
+
+#file g1\u4.js
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.qu4ts_1 = exports.qu4ts_0 = void 0;
+b2 = b1;
+a2 = a1;
+exports.qu4ts_0 = wu4ts_0.p0_a.p0_b.p0_c + 0;
+exports.qu4ts_1 = wu4ts_1.p1_a.p1_b.p1_c + 1;

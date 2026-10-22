@@ -1,0 +1,22 @@
+{
+ "compilerOptions": {
+  "types": [],
+  "noEmit": false,
+  "strict": true,
+  "module": "commonjs",
+  "target": "es2020",
+  "allowJs": true,
+  "declaration": true,
+  "outDir": "out",
+  "skipLibCheck": true
+ },
+ "files": [
+  "pad.ts",
+  "slow.ts",
+  "ma.js",
+  "mb.js",
+  "xa.js",
+  "xb.js",
+  "ia.js"
+ ]
+}

@@ -1,0 +1,169 @@
+g1/use3.ts(5,14): error TS2322: Type '{ a: any; b: any; } | { c: any; d: any; }' is not assignable to type 'number'.
+  Type '{ a: any; b: any; }' is not assignable to type 'number'.
+g1/use3.ts(6,14): error TS2322: Type '[any, any]' is not assignable to type 'number'.
+
+#exit 2
+#file g1\decl.d.ts
+export declare function f1({ a, b }: {
+    a: any;
+    b: any;
+}): number;
+export declare function f2({ c, d }: {
+    c: any;
+    d: any;
+}): number;
+export declare function f3([e, g]: [any, any]): number;
+export declare function f4([h, i]: [any, any]): number;
+export declare const flag: boolean;
+
+#file g1\decl.js
+export function f1({ a, b }) { return 1; }
+export function f2({ c, d }) { return 1; }
+export function f3([e, g]) { return 1; }
+export function f4([h, i]) { return 1; }
+
+#file g1\pad0.d.ts
+import { f2 as pf2, f4 as pf4 } from "./decl";
+export type PA = Parameters<typeof pf2>[0];
+export type PB = Parameters<typeof pf4>[0];
+export declare const r0_0: number;
+export declare const r0_1: number;
+export declare const r0_2: number;
+export declare const r0_3: number;
+export declare const r0_4: number;
+export declare const r0_5: number;
+export declare const r0_6: number;
+export declare const r0_7: number;
+export declare const r0_8: number;
+export declare const r0_9: number;
+export declare const r0_10: number;
+export declare const r0_11: number;
+
+#file g1\pad0.js
+export const r0_0 = v0_0.p0_a.p0_b.p0_c + 0;
+export const r0_1 = v0_1.p1_a.p1_b.p1_c + 1;
+export const r0_2 = v0_2.p2_a.p2_b.p2_c + 2;
+export const r0_3 = v0_3.p3_a.p3_b.p3_c + 3;
+export const r0_4 = v0_4.p4_a.p4_b.p4_c + 4;
+export const r0_5 = v0_5.p5_a.p5_b.p5_c + 5;
+export const r0_6 = v0_6.p6_a.p6_b.p6_c + 6;
+export const r0_7 = v0_7.p7_a.p7_b.p7_c + 7;
+export const r0_8 = v0_8.p8_a.p8_b.p8_c + 8;
+export const r0_9 = v0_9.p9_a.p9_b.p9_c + 9;
+export const r0_10 = v0_10.p10_a.p10_b.p10_c + 10;
+export const r0_11 = v0_11.p11_a.p11_b.p11_c + 11;
+
+#file g1\pad1.d.ts
+import { f1 as pf2, f4 as pf4 } from "./decl";
+export type PA = Parameters<typeof pf2>[0];
+export type PB = Parameters<typeof pf4>[0];
+export declare const r1_0: number;
+export declare const r1_1: number;
+export declare const r1_2: number;
+export declare const r1_3: number;
+export declare const r1_4: number;
+export declare const r1_5: number;
+export declare const r1_6: number;
+export declare const r1_7: number;
+export declare const r1_8: number;
+export declare const r1_9: number;
+export declare const r1_10: number;
+export declare const r1_11: number;
+
+#file g1\pad1.js
+export const r1_0 = v1_0.p0_a.p0_b.p0_c + 0;
+export const r1_1 = v1_1.p1_a.p1_b.p1_c + 1;
+export const r1_2 = v1_2.p2_a.p2_b.p2_c + 2;
+export const r1_3 = v1_3.p3_a.p3_b.p3_c + 3;
+export const r1_4 = v1_4.p4_a.p4_b.p4_c + 4;
+export const r1_5 = v1_5.p5_a.p5_b.p5_c + 5;
+export const r1_6 = v1_6.p6_a.p6_b.p6_c + 6;
+export const r1_7 = v1_7.p7_a.p7_b.p7_c + 7;
+export const r1_8 = v1_8.p8_a.p8_b.p8_c + 8;
+export const r1_9 = v1_9.p9_a.p9_b.p9_c + 9;
+export const r1_10 = v1_10.p10_a.p10_b.p10_c + 10;
+export const r1_11 = v1_11.p11_a.p11_b.p11_c + 11;
+
+#file g1\pad2.d.ts
+import { f1 as pf2, f4 as pf4 } from "./decl";
+export type PA = Parameters<typeof pf2>[0];
+export type PB = Parameters<typeof pf4>[0];
+export declare const r2_0: number;
+export declare const r2_1: number;
+export declare const r2_2: number;
+export declare const r2_3: number;
+export declare const r2_4: number;
+export declare const r2_5: number;
+export declare const r2_6: number;
+export declare const r2_7: number;
+export declare const r2_8: number;
+export declare const r2_9: number;
+export declare const r2_10: number;
+export declare const r2_11: number;
+
+#file g1\pad2.js
+export const r2_0 = v2_0.p0_a.p0_b.p0_c + 0;
+export const r2_1 = v2_1.p1_a.p1_b.p1_c + 1;
+export const r2_2 = v2_2.p2_a.p2_b.p2_c + 2;
+export const r2_3 = v2_3.p3_a.p3_b.p3_c + 3;
+export const r2_4 = v2_4.p4_a.p4_b.p4_c + 4;
+export const r2_5 = v2_5.p5_a.p5_b.p5_c + 5;
+export const r2_6 = v2_6.p6_a.p6_b.p6_c + 6;
+export const r2_7 = v2_7.p7_a.p7_b.p7_c + 7;
+export const r2_8 = v2_8.p8_a.p8_b.p8_c + 8;
+export const r2_9 = v2_9.p9_a.p9_b.p9_c + 9;
+export const r2_10 = v2_10.p10_a.p10_b.p10_c + 10;
+export const r2_11 = v2_11.p11_a.p11_b.p11_c + 11;
+
+#file g1\pad3.d.ts
+import { f1 as pf2, f4 as pf4 } from "./decl";
+export type PA = Parameters<typeof pf2>[0];
+export type PB = Parameters<typeof pf4>[0];
+export declare const r3_0: number;
+export declare const r3_1: number;
+export declare const r3_2: number;
+export declare const r3_3: number;
+export declare const r3_4: number;
+export declare const r3_5: number;
+export declare const r3_6: number;
+export declare const r3_7: number;
+export declare const r3_8: number;
+export declare const r3_9: number;
+export declare const r3_10: number;
+export declare const r3_11: number;
+
+#file g1\pad3.js
+export const r3_0 = v3_0.p0_a.p0_b.p0_c + 0;
+export const r3_1 = v3_1.p1_a.p1_b.p1_c + 1;
+export const r3_2 = v3_2.p2_a.p2_b.p2_c + 2;
+export const r3_3 = v3_3.p3_a.p3_b.p3_c + 3;
+export const r3_4 = v3_4.p4_a.p4_b.p4_c + 4;
+export const r3_5 = v3_5.p5_a.p5_b.p5_c + 5;
+export const r3_6 = v3_6.p6_a.p6_b.p6_c + 6;
+export const r3_7 = v3_7.p7_a.p7_b.p7_c + 7;
+export const r3_8 = v3_8.p8_a.p8_b.p8_c + 8;
+export const r3_9 = v3_9.p9_a.p9_b.p9_c + 9;
+export const r3_10 = v3_10.p10_a.p10_b.p10_c + 10;
+export const r3_11 = v3_11.p11_a.p11_b.p11_c + 11;
+
+#file g1\use3.d.ts
+import { f1, f2 } from "./decl";
+type P1 = Parameters<typeof f1>[0];
+type P2 = Parameters<typeof f2>[0];
+export declare const n1: number;
+export declare const n2: number;
+export declare const u: [any, any] | {
+    a: any;
+    b: any;
+} | {
+    c: any;
+    d: any;
+};
+export declare const z: P2 | P1;
+export {};
+
+#file g1\use3.js
+import { flag } from "./decl";
+export const n1 = x;
+export const n2 = y;
+export const u = flag ? x : y;

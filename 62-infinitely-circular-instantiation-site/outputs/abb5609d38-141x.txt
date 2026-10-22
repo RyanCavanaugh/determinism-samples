@@ -1,0 +1,3 @@
+use1.ts(75,16): error TS5114: Instantiations of type 'Foo' appear infinitely circular.
+
+#exit 2

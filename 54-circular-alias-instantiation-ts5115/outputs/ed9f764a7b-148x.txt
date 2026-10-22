@@ -1,0 +1,10 @@
+decl.ts(2,61): error TS2344: Type 'number' does not satisfy the constraint 'string'.
+decl.ts(4,49): error TS2344: Type 'number' does not satisfy the constraint 'string'.
+use1.ts(63,17): error TS2344: Type 'number' does not satisfy the constraint 'string'.
+use1.ts(63,40): error TS5115: Instantiations of the following types appear infinitely circular: 'A', 'B'.
+use1.ts(63,64): error TS2344: Type 'number' does not satisfy the constraint 'string'.
+use1.ts(63,89): error TS2344: Type 'number' does not satisfy the constraint 'string'.
+use2.ts(2,18): error TS2344: Type 'number' does not satisfy the constraint 'string'.
+use2.ts(2,67): error TS2344: Type 'number' does not satisfy the constraint 'string'.
+
+#exit 2

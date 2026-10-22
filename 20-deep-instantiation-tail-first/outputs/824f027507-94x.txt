@@ -1,0 +1,3 @@
+deepall.ts(2,23): error TS5114: Instantiations of type 'Deep' appear infinitely circular.
+
+#exit 2
